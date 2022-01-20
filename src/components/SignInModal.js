@@ -2,7 +2,7 @@ import { Modal, Button, Form } from "react-bootstrap";
 import React, { useState } from "react";
 import authStore from "../stores/authStore";
 
-function SignUpModal() {
+function SignInModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [user, setUser] = useState({
     username:"",
@@ -23,11 +23,11 @@ function SignUpModal() {
   return (
     <>
       <Button className="delete" onClick={() => setIsOpen(true)}>
-        Sign Up
+        Sign In
       </Button>
       <Modal centered show={isOpen} onHide={() => setIsOpen(false)}>
         <Modal.Header closeButton>
-          <Modal.Title>Sign up</Modal.Title>
+          <Modal.Title>Sign in</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
@@ -51,11 +51,11 @@ function SignUpModal() {
         </Modal.Body>
         <Modal.Footer>
           <Button variant="primary" onClick={handleSubmit}>
-            Sign up
+            Sign IN
           </Button>
         </Modal.Footer>
       </Modal>
     </>
   );
 }
-export default SignUpModal;
+export default SignInModal;
